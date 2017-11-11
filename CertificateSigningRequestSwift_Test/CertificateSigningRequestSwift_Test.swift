@@ -89,7 +89,7 @@ class TestCSR {
             let result = SecItemCopyMatching(query as CFDictionary, &publicKeyReturn)
             
             if result != errSecSuccess{
-                print("Error getting publicKey fron keychain occured: \(result)")
+                print("Error getting publicKey from keychain occured: \(result)")
                 return
             }
             
@@ -117,8 +117,8 @@ class TestCSR {
         
         publicKeyBits = keyBits
         
-        //Initiale CSR
-        let csr = CertificateSigningRequest(commonName: "CertificateSigningRequestSwift Test", organizationName:"Test", organizationUnitName:"Test", countryName:"US", keyAlgorithm: keyAlgorithm)
+        //Initialize CSR
+        let csr = CertificateSigningRequest(commonName: "CertificateSigningRequestSwift Test", organizationName:"Test", organizationUnitName:"Test", countryName:"US", stateOrProvinceName:"IL", localityName: "Chicago", keyAlgorithm: keyAlgorithm)
         
         //Build the CSR
         guard let csrBuild = csr.buildAndEncodeDataAsString(publicKeyBits!, privateKey: privateKey!) else {
