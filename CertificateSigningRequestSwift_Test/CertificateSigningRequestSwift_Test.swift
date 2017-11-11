@@ -72,7 +72,7 @@ class TestCSR {
             self.privateKey = SecKeyCreateRandomKey(parameters as CFDictionary, &error)
             
             if self.privateKey == nil{
-                print("Error creating keys occured: \(error!.takeRetainedValue() as Error), keys weren't created")
+                print("Error creating keys occurred: \(error!.takeRetainedValue() as Error), keys weren't created")
                 return
             }
             
@@ -89,7 +89,7 @@ class TestCSR {
             let result = SecItemCopyMatching(query as CFDictionary, &publicKeyReturn)
             
             if result != errSecSuccess{
-                print("Error getting publicKey from keychain occured: \(result)")
+                print("Error getting publicKey from keychain occurred: \(result)")
                 return
             }
             
