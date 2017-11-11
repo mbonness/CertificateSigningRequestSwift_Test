@@ -1,4 +1,0 @@
-framework module CertificateSigningRequestSwift {
-    header "CertificateSigningRequestSwift-Swift.h"
-    requires objc
-}
